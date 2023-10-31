@@ -4,7 +4,7 @@ function live_streaming() {
 
   return (
     <>
-      <h1>Live Streaming</h1>
+      <h1>Live Streaming App</h1>
       <div className="newpage">
         <VideoChat roomUrl={roomUrl} />
       </div>
