@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
 
-function VideoChat({ roomUrl, width, height }) {
+function VideoChat({ roomUrl }) {
   const createIframe = useMemo(() => {
     return () => {
       const iframe = document.getElementById('call-frame');
