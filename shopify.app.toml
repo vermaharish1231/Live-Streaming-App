@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "Live Streaming App"
+client_id = "69c10e4cad621391a25e6db638acb09a"
+application_url = "https://reactions-shoot-season-cayman.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://reactions-shoot-season-cayman.trycloudflare.com/auth/callback",
+  "https://reactions-shoot-season-cayman.trycloudflare.com/auth/shopify/callback",
+  "https://reactions-shoot-season-cayman.trycloudflare.com/api/auth/callback",
+  "https://reactions-shoot-season-cayman.trycloudflare.com/.shopify/graphiql/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-10"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "hverma1.myshopify.com"
