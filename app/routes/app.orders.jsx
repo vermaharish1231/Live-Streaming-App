@@ -1,11 +1,12 @@
 import {
   IndexTable,
-  LegacyCard,
   useIndexResourceState,
   Text,
   Badge,
+  Card
 } from '@shopify/polaris';
 import React from 'react';
+import { useEffect } from 'react';
 
 function orders() {
   const orders = [
@@ -53,7 +54,37 @@ function orders() {
 
   const {selectedResources, allResourcesSelected, handleSelectionChange} =
     useIndexResourceState(orders);
+  useEffect(()=>{
+    const apiKey = '776892f24b07587a31a94a6c0d760277';
+    const password = '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';
+    const storeName = 'hverma1';
+    const apiVersion = '2023-07';
 
+    const url = `https://${storeName}.myshopify.com/admin/api/${apiVersion}/orders.json?status=any`;
+
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin' :"*",
+        'Authorization': `Basic ${btoa(`${apiKey}:${password}`)}`,
+      },
+      credentials: 'include', // Include credentials for cross-origin requests
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data); // Handle the response data as needed
+      })
+      .catch((error) => {
+        console.error('Error fetching orders:', error);
+      });
+
+  },[])
   const rowMarkup = orders.map(
     (
       {id, order, date, customer, total, paymentStatus, fulfillmentStatus},
@@ -80,7 +111,7 @@ function orders() {
   );
 
   return (
-    <LegacyCard>
+    <Card>
       <IndexTable
         resourceName={resourceName}
         itemCount={orders.length}
@@ -99,7 +130,7 @@ function orders() {
       >
         {rowMarkup}
       </IndexTable>
-    </LegacyCard>
+    </Card>
   );
 }
 

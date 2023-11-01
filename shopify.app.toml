@@ -2,7 +2,7 @@
 
 name = "Live Streaming App"
 client_id = "69c10e4cad621391a25e6db638acb09a"
-application_url = "https://ferrari-fuel-nova-jewelry.trycloudflare.com"
+application_url = "https://foto-bow-southwest-benjamin.trycloudflare.com"
 embedded = true
 
 [access_scopes]
@@ -11,10 +11,10 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://ferrari-fuel-nova-jewelry.trycloudflare.com/auth/callback",
-  "https://ferrari-fuel-nova-jewelry.trycloudflare.com/auth/shopify/callback",
-  "https://ferrari-fuel-nova-jewelry.trycloudflare.com/api/auth/callback",
-  "https://ferrari-fuel-nova-jewelry.trycloudflare.com/.shopify/graphiql/auth/callback"
+  "https://foto-bow-southwest-benjamin.trycloudflare.com/auth/callback",
+  "https://foto-bow-southwest-benjamin.trycloudflare.com/auth/shopify/callback",
+  "https://foto-bow-southwest-benjamin.trycloudflare.com/api/auth/callback",
+  "https://foto-bow-southwest-benjamin.trycloudflare.com/.shopify/graphiql/auth/callback"
 ]
 
 [webhooks]
